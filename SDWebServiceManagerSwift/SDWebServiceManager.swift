@@ -18,7 +18,7 @@ class SDWebServiceManager: NSObject {
         var json = [AnyHashable : AnyObject]()
         var mutableError: Error?
         var headers = [String : String]()
-        var request = URLRequest(url: NSURL(string: "http://lc.mvpcopy.net/public/\(dict["urlVariable"] as! String)")! as URL)
+        var request = URLRequest(url: NSURL(string: "url/\(dict["urlVariable"] as! String)")! as URL)
         var loginString = ""
         let reachability  = Reachability()
         
@@ -33,7 +33,7 @@ class SDWebServiceManager: NSObject {
         }
            // Add variable to common URL
             if dict["urlVariable"] != nil {
-                request = URLRequest(url: NSURL(string: "http://lc.mvpcopy.net/public/\(dict["urlVariable"] as! String)")! as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 10.0)
+                request = URLRequest(url: NSURL(string: "url/\(dict["urlVariable"] as! String)")! as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 10.0)
                 request.httpMethod = "POST"
                 request.allHTTPHeaderFields = headers
             }

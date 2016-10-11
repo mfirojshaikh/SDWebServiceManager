@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         let tokenDict:Dictionary = ["name":"big","email":"big@test.com","company":"123456","big":"123456","phone":"1212121245","password":"123456"];
         
 
-        let result = SDWebServiceManager.sendSynchronousRequest(withUrl: "http://lc.mvpcopy.net/public/registerUser", method: "POST", andData: tokenDict as [String:String]?)
+        let result = SDWebServiceManager.sendSynchronousRequest(withUrl: "", method: "POST", andData: tokenDict as [String:String]?)
         
         print("result = \(result)")
         
