@@ -28,34 +28,38 @@ You have to follow the below steps:
 ## Implementation
 
 ### Ex.  Basic Auth Call .
-```objective-c
-    [SDWebServiceManager initWithWebServiceJSON:loginDict onCompletion:^(id dataDict,NSError *error,BOOL success){
+```swift
+        SDWebServiceManager.initwebService(JSON: loginDict as [String : AnyObject], onCompletion: {object,error,result in
+        
+            if error != nil
+            {
+                
+                print("Error = %@",error?.localizedDescription);
+                
+            }else  if result!
+            {
+                
+                print("\(object!)")
+            
+            }
+            
+        });
 
-            if(!error){
-                if (dataDict!=nil || dataDict) {
-                    NSLog(@"%@",dataDict);
-                }
-            }else
-                NSLog(@"%@",error.localizedDescription);
-        }];
 ```
 ### Ex.  POST Method
-```objective-c
-    NSDictionary *tokenDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"value",@"key",NULL];
-
-    NSDictionary *resultDataDict = [SDWebServiceManager sendSynchronousRequestWithUrl:@"urlstring" Method:@"POST" andData:tokenDict];
-    NSLog(@"result = %@",resultDataDict);
+```swift
+        let result = SDWebServiceManager.sendSynchronousRequest(withUrl: "", method: "POST", andData: tokenDict as [String:String]?)
 ```
 
 
 ### Ex. Get Method
-```objective-c
-    NSDictionary *resultData = [SDWebServiceManager sendSynchronousRequestWithUrl:@"urlstring" Method:nil andData:nil];
-    NSLog(@"result = %@",resultData);
+```swift
+        let result = SDWebServiceManager.sendSynchronousRequest(withUrl: "", method: "POST", andData: tokenDict as [String:String]?)
 ```
 
 ## Requirements
-•	iOS8 or higher
+
+• iOS8 or higher
 • swift 3.0
 
 ## Author
