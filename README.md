@@ -63,7 +63,7 @@ You have to follow the below steps:
 • swift 3.0
 
 ## Author
-	Stark digital Media Services Pvt. Ltd.
+	Firoj Shaikh.
 
 ## License
 SDWebServiceManager is released under the MIT license. See the LICENSE file for more info.
